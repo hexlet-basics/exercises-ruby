@@ -1,0 +1,6 @@
+---
+language:
+  docker_image: "gcr.io/hexlet-basics/exercises-ruby"
+  extension: python
+  exercise_filename: index.py
+  exercise_test_filename: test.py
