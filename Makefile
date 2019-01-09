@@ -8,7 +8,7 @@ compose-test:
 	docker-compose run exercises make test
 
 compose-install:
-	docker-compose run exercises npm install
+	docker-compose run exercises bundle install
 
 compose-bash:
 	docker-compose run exercises bash
