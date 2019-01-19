@@ -1,20 +1,5 @@
-def catch_stdout
-  old_stdout = $stdout
-  $stdout = StringIO.new
+require_relative '../../../lib/code_basics'
 
-  yield
-
-  result = $stdout.string
-
-  $stdout = old_stdout
-
-  result.strip
+CodeBasics.execute!(__dir__) do |stdout|
+  assert { stdout == 'Hello, World!' }
 end
-
-index_file_path = File.join(__dir__, 'index.rb')
-
-actual = catch_stdout do
-  load(index_file_path)
-end
-
-raise unless actual == 'Hello, World!'
