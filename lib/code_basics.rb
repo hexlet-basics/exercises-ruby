@@ -27,11 +27,9 @@ class CodeBasics
 
   class << self
     def execute!(dir, &block)
-      result = new(dir).execute_with_stdout(&block)
+      new(dir).execute_with_stdout(&block) || exit(1)
     rescue Halt
-      result = false
-    ensure
-      exit(1) unless result
+      exit(1)
     end
   end
 
@@ -50,14 +48,12 @@ class CodeBasics
 
   def assert(&block)
     PowerAssert.start(block, assertion_method: __callee__) do |pa|
-      begin
-        val = pa.yield
+      val = pa.yield
 
-        val || (raise Halt)
-      rescue StandardError => e
-        puts pa.message
-        raise e
-      end
+      val || (raise Halt)
+    rescue StandardError => e
+      puts pa.message
+      raise e
     end
   end
 
