@@ -1,9 +1,29 @@
 # frozen_string_literal: true
 
 require 'power_assert'
+require 'backtrace_cleaner'
 
 class CodeBasics
   class Halt < StandardError; end
+
+  class NiceBacktrace
+    def initialize(root_dir)
+      @backtrace_cleaner = BacktraceCleaner.new
+      @backtrace_cleaner.add_filter do |line|
+        line.gsub(root_dir, '').gsub(__dir__, '').gsub(/^\//, '')
+      end
+    end
+
+    def call(exception)
+      exception.set_backtrace(
+        @backtrace_cleaner.clean(
+          exception.backtrace
+        )
+      )
+
+      raise exception
+    end
+  end
 
   class IO
     def catch_stdout
@@ -13,9 +33,10 @@ class CodeBasics
       yield
 
       result = $stdout.string
-      $stdout = old_stdout
 
       result
+    ensure
+      $stdout = old_stdout
     end
 
     def execute_task(index_file_path)
@@ -27,9 +48,12 @@ class CodeBasics
 
   class << self
     def execute!(dir, &block)
-      new(dir).execute_with_stdout(&block) || exit(1)
+      runner = new(dir)
+      runner.execute_with_stdout(&block) || exit(1)
     rescue Halt
       exit(1)
+    rescue StandardError => e
+      NiceBacktrace.new(dir).call(e)
     end
   end
 
