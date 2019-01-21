@@ -1,3 +1,5 @@
+export RUBYLIB=$(realpath lib)
+
 compose: compose-build
 	docker-compose up
 
@@ -8,7 +10,7 @@ compose-test:
 	docker-compose run exercises make test
 
 compose-install:
-	docker-compose run exercises bundle install
+	docker-compose run exercises bundle install --without tools
 
 compose-bash:
 	docker-compose run exercises bash
@@ -24,7 +26,7 @@ lint:
 test: $(SUBDIRS)
 $(SUBDIRS):
 	@echo
-	make test -s -C $@
+	@ make test -s -C $@
 	@echo
 
 .PHONY: all $(SUBDIRS)

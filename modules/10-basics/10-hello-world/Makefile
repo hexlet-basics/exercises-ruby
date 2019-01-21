@@ -1,2 +1,2 @@
 test:
-	ruby test.rb 2>&1
+	bundle exec ruby check_exercise.rb 2>&1
