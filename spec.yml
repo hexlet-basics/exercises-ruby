@@ -2,4 +2,4 @@ language:
   docker_image: "gcr.io/hexlet-basics/exercises-ruby"
   extension: ruby
   exercise_filename: index.rb
-  exercise_test_filename: test.rb
+  exercise_test_filename: check_exercise.rb
