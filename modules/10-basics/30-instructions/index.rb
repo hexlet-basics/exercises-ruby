@@ -1,3 +1,3 @@
-print('Robert')
-print('Stannis')
-print('Renly')
+puts('Robert')
+puts('Stannis')
+puts('Renly')
