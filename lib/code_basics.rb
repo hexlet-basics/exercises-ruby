@@ -40,9 +40,14 @@ class CodeBasics
     end
 
     def execute_task(index_file_path)
-      catch_stdout do
-        load(index_file_path)
+      klass = Class
+      stdout = catch_stdout do
+        klass.class_eval do
+          eval(File.read(index_file_path))
+        end
       end.strip
+
+      [stdout, klass.new]
     end
   end
 
@@ -65,9 +70,9 @@ class CodeBasics
   end
 
   def execute_with_stdout(&block)
-    stdout = io.execute_task(index_file_path)
+    stdout, result_module = io.execute_task(index_file_path)
     print stdout + "\n\n"
-    instance_exec(stdout, &block)
+    instance_exec(stdout, result_module, &block)
   end
 
   def assert(&block)
