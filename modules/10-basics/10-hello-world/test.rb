@@ -3,5 +3,5 @@
 require 'code_basics'
 
 CodeBasics.execute!(__dir__) do |stdout|
-  assert { stdout == "Patience\nYou must have" }
+  assert { stdout == "Hello, World!\nHello, World!\nHello, World!" }
 end
