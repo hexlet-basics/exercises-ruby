@@ -3,8 +3,8 @@ export RUBYLIB=$(realpath lib)
 compose: compose-build
 	docker-compose up
 
-gcloud-builds-submit:
-	gcloud builds submit --config cloudbuild.yaml .
+# gcloud-builds-submit:
+# 	gcloud builds submit --config cloudbuild.yaml .
 
 compose-test:
 	docker-compose run exercises make test
