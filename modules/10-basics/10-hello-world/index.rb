@@ -1,6 +1,7 @@
-def puts_inverted(first, second)
-  puts second
-  puts first
+def print_hello
+  puts 'Hello, World!'
 end
 
-puts_inverted "You must have", "Patience"
+print_hello
+print_hello
+print_hello
