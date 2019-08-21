@@ -3,10 +3,12 @@
 require 'code_basics'
 
 CodeBasics.execute!(__dir__) do |_stdout, result|
-  assert do
-    result.build_sms_message('Сергей', 'Константинопольский', 13, '331233') == 'К вам выехали по заказу ***233. Приедем через 13 мин. Бригадир Константинопольский С.'
-  end
-  assert do
-    result.build_sms_message('Анна', 'Масляная', 31.5, '124422') == 'К вам выехали по заказу ***422. Приедем через 31.5 мин. Бригадир Масляная А.'
-  end
+    assert { result.leap?(1600) == true }
+    assert { result.leap?(1601) == false }
+    assert { result.leap?(1602) == false }
+    assert { result.leap?(1603) == false }
+    assert { result.leap?(1604) == true }
+    assert { result.leap?(1800) == false }
+    assert { result.leap?(1900) == false }
+    assert { result.leap?(2000) == true }
 end
