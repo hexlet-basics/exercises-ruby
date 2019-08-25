@@ -17,7 +17,7 @@ theory: |
 
   a || b # => true
   b && a # => false
-  b && b # => false
+  b && b # => true
 
   !a # => true
 
