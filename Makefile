@@ -1,6 +1,8 @@
 export RUBYLIB=$(realpath lib)
 
-compose: compose-build
+compose-setup: compose-build
+
+compose:
 	docker-compose up
 
 # gcloud-builds-submit:
@@ -8,6 +10,9 @@ compose: compose-build
 
 compose-test:
 	docker-compose run exercises make test
+
+compose-lint:
+	docker-compose run exercises make lint
 
 compose-install:
 	docker-compose run exercises bundle install --without tools
