@@ -1,9 +1,9 @@
 ---
-version: "3"
+version: '3'
 
 services:
   exercises:
     build: .
     volumes:
       - .:/exercises-ruby
-    command: make lint test
+    command: make check
