@@ -1,18 +1,21 @@
 export RUBYLIB=$(realpath lib)
 
-compose-setup: compose-build
+compose-setup: compose-build compose-install
 
 compose:
 	docker-compose up
 
-# gcloud-builds-submit:
-# 	gcloud builds submit --config cloudbuild.yaml .
+compose-sut:
+	docker-compose -f docker-compose.test.yml run sut
 
-compose-test:
-	docker-compose run exercises make test
+compose-code-lint:
+	docker-compose run exercises make code-lint
 
-compose-lint:
-	docker-compose run exercises make lint
+compose-description-lint:
+	docker-compose run exercises make description-lint
+
+compose-schema-validate:
+	docker-compose run exercises make schema-validate
 
 compose-install:
 	docker-compose run exercises bundle install --without tools
@@ -23,15 +26,25 @@ compose-bash:
 compose-build:
 	docker-compose build
 
-SUBDIRS := $(wildcard modules/**/*/.)
-
-lint:
+description-lint:
 	yamllint modules
 
-test: $(SUBDIRS)
-$(SUBDIRS):
-	@echo
-	@ make test -s -C $@
-	@echo
+code-lint:
+	rubocop modules
 
-.PHONY: all $(SUBDIRS)
+compose-test:
+	docker-compose run exercises make test
+
+test:
+	@(for i in $$(find modules/** -type f -name Makefile); do make test -C $$(dirname $$i) || exit 1; done)
+
+check: description-lint code-lint schema-validate test
+
+SUBDIRS := $(wildcard modules/**/*/.)
+
+schema-validate: $(SUBDIRS)
+$(SUBDIRS):
+	yq . $@/description.ru.yml > /tmp/current-description.json && ajv -s /exercises-ruby/schema.json -d /tmp/current-description.json
+	yq . $@/description.en.yml > /tmp/current-description.json && ajv -s /exercises-ruby/schema.json -d /tmp/current-description.json || true
+
+.PHONY: all test $(SUBDIRS)
