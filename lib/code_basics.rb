@@ -2,6 +2,7 @@
 
 require 'power_assert'
 require 'backtrace_cleaner'
+require 'stringio'
 
 class CodeBasics
   class Halt < StandardError; end
