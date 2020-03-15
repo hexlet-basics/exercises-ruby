@@ -2,8 +2,8 @@
 
 # BEGIN
 
-def sum_of_squares(a, b, c)
-  puts a**2 + b**2 + c**2
+def sum_of_squares(first, second, third)
+  puts first**2 + second**2 + third**2
 end
 
 sum_of_squares(3, 4, 5)
