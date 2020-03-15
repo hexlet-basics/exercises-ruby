@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Style/NumericPredicate
+
 # BEGIN
 
 def leap?(year)
@@ -13,3 +15,5 @@ def leap?(year)
 end
 
 # END
+
+# rubocop:enable Style/NumericPredicate
