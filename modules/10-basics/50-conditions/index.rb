@@ -1,3 +1,8 @@
+# frozen_string_literal: true
+
+# rubocop:disable Style/NumericPredicate
+
+# BEGIN
 
 def leap?(year)
   if year % 400 == 0
@@ -8,3 +13,7 @@ def leap?(year)
     year % 4 == 0
   end
 end
+
+# END
+
+# rubocop:enable Style/NumericPredicate
