@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
-require 'code_basics'
+require 'test_helper'
 
-CodeBasics.execute!(__dir__) do |stdout|
-  assert { stdout == "Hello, World!\nHello, World!\nHello, World!" }
+class Test < Minitest::Test
+  def test_index
+    assert_output(/Hello, World!/) do
+      require './index.rb'
+    end
+  end
 end

@@ -1,2 +1,2 @@
 test:
-	bundle exec ruby test.rb 2>&1
+	@ . ../../../test.sh
