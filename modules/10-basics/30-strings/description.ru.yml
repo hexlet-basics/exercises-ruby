@@ -1,0 +1,26 @@
+---
+name: Строки
+theory: |
+
+  ```ruby
+  def prepare_card_for_display(card_number)
+    last_part = card_number[12, 4]
+    "**#{last_part}"
+  end
+  ```
+  1. Извлечение символа из строки
+  1. Слайсы строк
+  1. Интепроляция/Конкатенация
+
+  ```ruby
+  def prepare_card_for_display(card_number)
+    "**#{card_number[12, 4]}"
+  end
+  ```
+
+
+instructions: |
+
+  Задание
+
+tips: []

@@ -1,0 +1,16 @@
+---
+name: Switch
+theory: |
+
+  ```ruby
+  def normalize_url(url)
+    url.chomp('/')
+    add https
+  end
+  ```
+
+instructions: |
+
+  Задание
+
+tips: []

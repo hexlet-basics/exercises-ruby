@@ -5,5 +5,7 @@ AllCops:
     - 'modules/**/*.rb'
   TargetRubyVersion: 2.7.1
 
+Style/FrozenStringLiteralComment:
+  Enabled: false
 Style/Documentation:
   Enabled: false
