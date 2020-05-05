@@ -1,0 +1,9 @@
+AllCops:
+  AutoCorrect: true
+  Include:
+    - 'lib/**/*.rb'
+    - 'modules/**/*.rb'
+  TargetRubyVersion: 2.7.1
+
+Style/Documentation:
+  Enabled: false

@@ -30,7 +30,7 @@ description-lint:
 	yamllint modules
 
 code-lint:
-	rubocop modules
+	bundle exec rubocop modules
 
 compose-test:
 	docker-compose run exercises make test
