@@ -11,7 +11,7 @@ class CodeBasics
     def initialize(root_dir)
       @backtrace_cleaner = BacktraceCleaner.new
       @backtrace_cleaner.add_filter do |line|
-        line.gsub(root_dir, '').gsub(__dir__, '').gsub(/^\//, '')
+        line.gsub(root_dir, '').gsub(__dir__, '').gsub(%r{^/}, '')
       end
     end
 
@@ -44,7 +44,7 @@ class CodeBasics
       klass = Class
       stdout = catch_stdout do
         klass.class_eval do
-          eval(File.read(index_file_path))
+          eval(File.read(index_file_path)) # rubocop:disable Security/Eval
         end
       end.strip
 
