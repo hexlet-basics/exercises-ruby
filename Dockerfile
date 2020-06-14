@@ -1,7 +1,8 @@
 FROM melodyn/base-image:latest
 
-# ruby:2.7.1
+RUN apt-get install -y ruby-full
 RUN gem install rubocop
+RUN gem install bundler
 
 WORKDIR /exercises-ruby
 
