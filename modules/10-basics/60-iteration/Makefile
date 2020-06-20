@@ -1,2 +1,2 @@
 test:
-	@ test.sh
+	@ ../../../bin/test.sh
