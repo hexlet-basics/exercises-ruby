@@ -1,6 +1,7 @@
 -include common.mk
 
 export RUBYLIB=$(realpath lib)
+export PATH:=$(realpath bin):$(PATH)
 
 compose-setup: compose-build compose-install
 
