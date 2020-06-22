@@ -1,4 +1,4 @@
-FROM melodyn/base-image:latest
+FROM hexletbasics/base-image:latest
 
 RUN apt-get install -y ruby-full
 RUN gem install rubocop
@@ -6,7 +6,7 @@ RUN gem install bundler
 
 WORKDIR /exercises-ruby
 
-COPY --from=melodyn/base-image:latest /tmp/basics/common/* ./
+COPY --from=hexletbasics/base-image:latest /tmp/basics/common/* ./
 COPY . .
 
 ENV RUBYLIB=/exercises-ruby/lib
