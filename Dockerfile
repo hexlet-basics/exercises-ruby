@@ -1,18 +1,8 @@
-FROM ruby:2.7.1
+FROM hexletbasics/base-image:latest
 
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
-
-# RUN apt-get update && apt-get install -yqq git python3-pkg-resources yamllint
-RUN apt-get update && apt-get install -yqq git curl python3-pip libyaml-dev zip unzip
-RUN apt-get install -yqq nodejs npm
-
-RUN pip3 install yamllint
-RUN apt-get install -yqq jq
-RUN pip3 install yq
-RUN npm install -g ajv-cli
-
+RUN apt-get install -y ruby-full
 RUN gem install rubocop
+RUN gem install bundler
 
 WORKDIR /exercises-ruby
 
