@@ -1,4 +1,4 @@
--include common.mk
+-include /opt/basics/common/common.mk
 
 export RUBYLIB=$(realpath lib)
 export PATH:=$(realpath bin):$(PATH)

@@ -6,7 +6,6 @@ RUN gem install bundler
 
 WORKDIR /exercises-ruby
 
-COPY --from=hexletbasics/base-image:latest /tmp/basics/common/* ./
 COPY . .
 
 ENV RUBYLIB=/exercises-ruby/lib
