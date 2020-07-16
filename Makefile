@@ -11,6 +11,9 @@ compose:
 compose-install:
 	docker-compose run exercises bundle install --without tools
 
+compose-bash:
+	docker-compose run exercises bash
+
 compose-build:
 	docker-compose build
 
