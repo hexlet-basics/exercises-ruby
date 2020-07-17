@@ -19,3 +19,6 @@ compose-build:
 
 code-lint:
 	bundle exec rubocop modules
+
+compose-test:
+	docker-compose run exercises make test
