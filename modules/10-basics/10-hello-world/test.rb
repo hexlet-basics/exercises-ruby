@@ -2,10 +2,8 @@
 
 require 'test_helper'
 
-class Test < Minitest::Test
-  def test_index
-    assert_output(/Hello, World!/) do
-      require './index.rb'
-    end
+describe 'output' do
+  it 'should works' do
+    _(-> { require './index.rb' }).must_output(/Hello, World!/)
   end
 end

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 # BEGIN
-puts 'Hello, World!'
+def double(num)
+  num + num
+end
 # END
