@@ -2,7 +2,7 @@
 
 # BEGIN
 def prepare_card_for_display(card_number)
-  last_part = card_number[-4..-1]
+  last_part = card_number[-4..]
   "**#{last_part}"
 end
 # END

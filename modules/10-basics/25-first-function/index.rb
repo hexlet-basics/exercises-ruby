@@ -2,6 +2,6 @@
 
 # BEGIN
 def double(num)
-  num + num
+  num * 2
 end
 # END
