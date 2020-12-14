@@ -1,3 +1,3 @@
 # BEGIN
-uts 'Hello, World!'
+puts 'Hello, World!'
 # END
