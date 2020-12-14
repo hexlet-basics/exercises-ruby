@@ -26,6 +26,11 @@ theory: |
 
 instructions: |
 
-  Задание
+  Реализуйте функцию `reverse()`, которая переворачивает строку
+
+  ```ruby
+  reverse 'hexlet' # telxeh
+  reverse 'basics' # scisab
+  ```
 
 tips: []

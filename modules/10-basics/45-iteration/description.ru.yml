@@ -39,6 +39,7 @@ instructions: |
 
   ```ruby
   average(5, 8) # (5 + 6 + 7 + 8) / 4; 26 / 4; 6.5
+  average(2, 4) # (2 + 3 + 4) / 3; 9 / 3; 3.0
   ```
 
 tips: []

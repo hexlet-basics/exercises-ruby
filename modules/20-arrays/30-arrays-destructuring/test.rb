@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 require 'test_helper'
+require './index'
 
-class Test < Minitest::Test
-  def test_index
-    assert_output(/Hello, World!/) do
-      require './index.rb'
-    end
+describe 'function' do
+  it 'should works' do
+    # assert { double(3) == 6 }
   end
 end

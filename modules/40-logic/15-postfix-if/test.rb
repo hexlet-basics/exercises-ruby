@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 require 'test_helper'
+require './index'
 
-describe 'output' do
+describe 'function' do
   it 'should works' do
-    _(-> { require './index.rb' }).must_output(/Hello, World!/)
+    # assert { double(3) == 6 }
   end
 end
