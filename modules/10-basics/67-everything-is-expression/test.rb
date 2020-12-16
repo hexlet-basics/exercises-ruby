@@ -5,6 +5,7 @@ require './index'
 
 describe 'function' do
   it 'should works' do
-    # assert { happy? 33 }
+    assert { invert_case('Hello, World!') == 'hELLO, wORLD!' }
+    assert { invert_case('I loVe JS') ==  'i LOvE js' }
   end
 end

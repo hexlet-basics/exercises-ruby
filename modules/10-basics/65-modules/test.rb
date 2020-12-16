@@ -5,6 +5,7 @@ require './index'
 
 describe 'function' do
   it 'should works' do
-    # assert { happy? 33 }
+    assert { Number.reverseInt(123) == 321 }
+    assert { Number.reverseInt(-34) == -43 }
   end
 end

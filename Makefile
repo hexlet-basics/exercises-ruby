@@ -9,7 +9,7 @@ compose:
 	docker-compose up
 
 compose-install:
-	docker-compose run exercises bundle install --without tools
+	docker-compose run exercises bundle install
 
 compose-bash:
 	docker-compose run exercises bash
