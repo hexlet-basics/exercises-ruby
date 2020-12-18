@@ -6,6 +6,7 @@ gem 'activesupport'
 gem 'minitest'
 gem 'minitest-power_assert'
 gem 'minitest-reporters'
+gem 'rubocop-minitest'
 gem 'power_assert'
 gem 'rubocop'
 
