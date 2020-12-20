@@ -6,5 +6,6 @@ services:
   exercises:
     build:
       context: .
-      cache_from: hexletbasics/exercises-ruby
+      cache_from:
+        - hexletbasics/exercises-ruby
     command: make check
