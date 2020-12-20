@@ -42,6 +42,6 @@ jobs:
           echo "SLACK_COLOR=#a30200" >> $GITHUB_ENV
       - name: Send notification into Slack
         if: ${{ always() }}
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: rtCamp/action-slack-notify@latest
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
