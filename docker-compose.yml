@@ -4,8 +4,5 @@ version: '3'
 
 services:
   exercises:
-    build:
-      context: .
-      cache_from:
-        - hexletbasics/exercises-ruby
+    image: hexletbasics/exercises-ruby
     command: make check
