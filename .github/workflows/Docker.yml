@@ -39,6 +39,8 @@ jobs:
           tags: ${{ env.IMAGE_NAME }}:latest
           # tags: ${{ env.IMAGE_NAME }}:release
 
+      - uses: actions/checkout@v2
+
       - name: Check
         run: |
           docker-compose --file docker-compose.yml up --abort-on-container-exit
