@@ -37,7 +37,7 @@ jobs:
           # cache-to: type=inline
           # push: ${{ github.event_name == 'push' }}
           tags: ${{ env.IMAGE_NAME }}:latest
-          tags: ${{ env.IMAGE_NAME }}:release
+          # tags: ${{ env.IMAGE_NAME }}:release
 
       - name: Check
         run: |
