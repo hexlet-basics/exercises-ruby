@@ -44,6 +44,9 @@ jobs:
       - name: Check
         run: |
           docker-compose --file docker-compose.yml up --abort-on-container-exit
+        env:
+          COMPOSE_DOCKER_CLI_BUILD: 1
+          DOCKER_BUILDKIT: 1
 
       - name: Push
         uses: docker/build-push-action@v2
