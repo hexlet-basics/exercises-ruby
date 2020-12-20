@@ -1,7 +1,7 @@
 -include /opt/basics/common/common.mk
 
-export RUBYLIB=$(realpath lib)
-export PATH:=$(realpath bin):$(PATH)
+# export RUBYLIB=$(realpath lib)
+# export PATH:=$(realpath bin):$(PATH)
 
 compose-setup: compose-build compose-install
 
@@ -17,8 +17,11 @@ compose-bash:
 compose-build:
 	docker-compose build
 
-code-lint:
-	bundle exec rubocop modules
-
 compose-test:
 	docker-compose run exercises make test
+
+compose-lint:
+	docker-compose run exercises make code-lint
+
+code-lint:
+	bundle exec rubocop modules
