@@ -6,7 +6,7 @@ theory: |
 
   ```ruby
   # Конкатенация
-  name = 'H' + 'e' + 'l' + 'e' + 't' # Hexlet
+  name = 'H' + 'e' + 'x' + 'l' + 'e' + 't' # Hexlet
   # Интерполяция
   greeting = "hello #{name}" # hello Hexlet
   ```
