@@ -36,17 +36,15 @@ jobs:
           cache-from: type=registry,ref=${{ env.IMAGE_NAME }}:cached
           cache-to: type=inline
           # push: true
-          tags: ${{ env.IMAGE_NAME }}:latest
+          tags: |
+            ${{ env.IMAGE_NAME }}:latest
+            ${{ env.IMAGE_NAME }}:cached
 
       - uses: actions/checkout@v2
 
       - name: Check
         run: |
           docker-compose --file docker-compose.yml up --abort-on-container-exit
-        env:
-          COMPOSE_DOCKER_CLI_BUILD: 1
-          DOCKER_BUILDKIT: 1
-          BUILDKIT_INLINE_CACHE: 1
 
       - name: Push
         uses: docker/build-push-action@v2
