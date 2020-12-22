@@ -24,14 +24,14 @@ jobs:
       -
         name: Login to DockerHub
         uses: docker/login-action@v1
-        if: ${{ env.IS_PUSH }}
+        if: ${{ env.IS_PUSH == 'true' }}
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build
         uses: docker/build-push-action@v2
-        if: ${{ env.IS_PUSH }}
+        if: ${{ env.IS_PUSH == 'true' }}
         with:
           cache-from: type=registry,ref=${{ env.IMAGE_NAME }}:cached
           cache-to: type=inline
@@ -48,13 +48,13 @@ jobs:
 
       - name: Push
         uses: docker/build-push-action@v2
-        if: ${{ env.IS_PUSH }}
+        if: ${{ env.IS_PUSH == 'true' }}
         with:
           push: true
           tags: ${{ env.IMAGE_NAME }}:latest
 
       - name: Send notification into Slack
-        if: ${{ always() && env.IS_PUSH }}
+        if: ${{ always() && env.IS_PUSH == 'true' }}
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_COLOR: ${{ fromJson(env.COLOR_MAP)[job.status] }}
