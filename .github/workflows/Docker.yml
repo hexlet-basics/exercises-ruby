@@ -11,7 +11,7 @@ on:
 env:
   IMAGE_NAME: hexletbasics/exercises-ruby
   IS_PUSH: ${{ github.event_name == 'push' }}
-  COLOR_MAP: '{ success: "green", failure: "red" }'
+  COLOR_MAP: '{ success: "#800000", failure: "#008000" }'
 
 jobs:
   main:
