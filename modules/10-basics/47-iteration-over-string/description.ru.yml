@@ -24,6 +24,18 @@ theory: |
 
   Метод [each_char()](https://ruby-doc.org/core-2.7.2/String.html#method-i-each_char) определен именно на строке.
 
+  Ниже чуть более сложный пример с агрегацией. Код, который считает количество букв *e* в строке:
+
+  ```ruby
+  company_name = 'hexlet'
+  letters_count = 0
+  company_name.each_char do |c| # c – значит char
+    if c == 'e'
+      letters_count += 1
+    end
+  end
+  ```
+
 instructions: |
 
   Реализуйте функцию `reverse()`, которая переворачивает строку

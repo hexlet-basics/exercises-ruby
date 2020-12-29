@@ -1,8 +1,8 @@
 ---
-name: Постфиксный if
+name: Обработка коллекций
 theory: |
 
-  В разработке
+  map(&:money)
 
 instructions: |
 

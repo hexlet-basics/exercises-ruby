@@ -1,0 +1,15 @@
+---
+name: Значение по умолчанию (Массивы)
+theory: |
+
+  concat, [...]
+  ```ruby
+  items.fetch()
+  include
+  ```
+
+instructions: |
+
+  В разработке
+
+tips: []
