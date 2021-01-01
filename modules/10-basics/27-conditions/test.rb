@@ -5,6 +5,8 @@ require './index'
 
 describe 'function' do
   it 'should works' do
-    # assert { double(3) == 6 }
+    assert { !even?(1) }
+    assert { even?(2) }
+    assert { !even?(9) }
   end
 end
