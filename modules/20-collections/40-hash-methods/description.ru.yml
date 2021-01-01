@@ -1,70 +1,89 @@
 ---
+
 name: Методы хешей
 theory: |
 
-  Hash, тип данных предназначенный для хранения пар *ключ-значение*. Порядок ключей в хеше определен и совпадает с порядком их добавления.
+  Как и у массивов, базовый метод обработки хешей это `each()` (или алиас `each_pair()`). Он принимает на вход блок, в который передаются и ключ и значение:
 
   ```ruby
-  options = {}
-  # при таком определении ключ становится символом (symbol)
-  options = { key: 'value' }
-  options[:key] # 'value'
+  data = {
+    clojure: 'dynamic',
+    go: 'static',
+    kotlin: 'static'
+  }
 
-  # при таком определении ключ становится строкой (symbol)
-  options = { 'key' => 'value' }
-
-  # добавление/замена в хешах
-  options[:where] = 'code-basics'
-  options[:who] = 'hexlet'
-
-  # возвращает ключи
-  options.keys # [:key, :where, :who]
-
-  # возвращает значения
-  options.values # ['value', 'code-basics', 'hexlet']
-
-  # Обращение к несуществующему элементу возвращает nil
-  options[:language] # nil
-
-  # Доступ к вложенным структурам без необходимости проверок
-  options.dig(:key1, :key2, :key3)
-
-  # Если ключа нет, то будет брошено исключение
-  options.fetch(:key)
-
-  # Если ключа нет, то вернется значение по умолчанию
-  options.fetch(:key, 'default value')
+  data.each do |key, value|
+    # логика
+  end
   ```
 
-  # Проверка наличия ключа
-  options.key?('who') # true
+  С его помощью можно выполнить любую задачу по преообразованию хеша, но в каждой конкретной ситуации лучше пользоваться специализированными функциями, которые позволяют сократить код и сделать его понятнее.
 
-  Хеши в Ruby передаются по ссылке, но сравнение происходит по значению как и в массивах.
+  **[transform_values()](https://ruby-doc.org/core-3.0.0/Hash.html#method-i-transform_values)**
+
+  Этот метод позволяет преобразовать значения оставив ключи. На выходе получается новый хеш:
 
   ```ruby
-  options1 = { language: 'ruby' }
-  options2 = { language: 'ruby' }
-  options1 == options2 # true
+  new_data = data.transform_values { |value| value.upcase }
+  # { clojure: "DYNAMIC", go: "STATIC", kotlin: "STATIC" }
   ```
 
-  У хешей как и у массивов огромное количество различных методов на все случаи жизни включая обход и разнообразные функции высшего порядка. Частично мы их коснемся дальше, но основная часть познается уже в повседневной работе.
+  С помощью этого метода можно даже поменять тип значений и сделать их например массивами. Точно такой же метод есть и для ключей: [transform_keys()](https://ruby-doc.org/core-3.0.0/Hash.html#method-i-transform_keys).
+
+  **[slice()](https://ruby-doc.org/core-3.0.0/Hash.html#method-i-slice)**
+
+  Слайс позволяет извлечь из хеша только его часть по указанным ключам:
+
+  ```ruby
+  data.slice(:clojure, :go)
+  # { clojure: "dynamic", go: "static" }
+  ```
+
+  **[select()](https://ruby-doc.org/core-3.0.0/Hash.html#method-i-select)**
+
+  Для более сложных ситуаций подходит метод `select()`, который действует как фильтр и извлекает из хеша его часть, которая соответствует нужным условиям:
+
+  ```ruby
+  data.select { |key, value| value == 'static' }
+  # { go: "static", kotlin: "static" }
+  ```
 
 instructions: |
 
-  Реализуйте функцию `get_words_count_by_lang()`, которая считает количество слов в тексте
+  Реализуйте функцию `plainify()`, которая принимает на вход список песен сгруппированных по имени группы и возвращает плоский список песен, удобный для вывода на экран.
 
   ```ruby
-  text = 'php ruby php java javascript go go go'
-  get_words_count_by_lang text
-  # {
-  #   php: 2,
-  #   ruby: 1,
-  #   java: 1,
-  #   javascript: 1,
-  #   go: 3
-  # }
+    data = {
+      'Queen' => [
+        'Bohemian Rhapsody',
+        "Don't Stop Me Now"
+      ],
+      'Metallica' => [
+        'Nothing Else Matters'
+      ],
+      "Guns N' Roses" => [
+        'Paradise City',
+        'November Rain'
+      ],
+      'AC/DC' => [
+        'Thunderstruck',
+        'Back In Black',
+        'Shoot to Thrill'
+      ]
+    }
+
+  result = plainify data
+
+  # [
+  #   { band: 'Queen', song: 'Bohemian Rhapsody' },
+  #   { band: 'Queen', song: "Don't Stop Me Now" },
+  #   { band: 'Metallica', song: 'Nothing Else Matters' },
+  #   { band: "Guns N' Roses", song: 'Paradise City' },
+  #   { band: "Guns N' Roses", song: 'November Rain' },
+  #   { band: 'AC/DC', song: 'Thunderstruck' },
+  #   { band: 'AC/DC', song: 'Back In Black' },
+  #   { band: 'AC/DC', song: 'Shoot to Thrill' }
+  # ]
   ```
 
-tips:
-  - |
-    [each_with_index()](https://ruby-doc.org/core-3.0.0/Enumerator.html#method-i-each_with_index)
+tips: []

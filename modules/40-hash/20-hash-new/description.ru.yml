@@ -1,6 +1,6 @@
 ---
 
-name: each_with_object
+name: Hash#new
 theory: |
 
   В процессе разработки

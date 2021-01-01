@@ -2,6 +2,12 @@
 
 # BEGIN
 def sort_cases(data)
+  data.sort_by do |row|
+    # destructuring example
+    day, month, year = row.first.split('-')
+    Time.new(year, month, day).to_i.to_s
+  # it is possible to chain blocks
+  end.reverse
   # by_countries = sorted_data.each_with_object({}) do |row, result|
   #   # destructuring example
   #   date, country_name, cases_count = row
