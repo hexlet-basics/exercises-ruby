@@ -1,0 +1,11 @@
+---
+name: Обработка коллекций
+theory: |
+
+  map(&:money)
+
+instructions: |
+
+  В разработке
+
+tips: []

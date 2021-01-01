@@ -1,0 +1,70 @@
+---
+name: Хеши
+theory: |
+
+  Hash, тип данных предназначенный для хранения пар *ключ-значение*. Порядок ключей в хеше определен и совпадает с порядком их добавления.
+
+  ```ruby
+  options = {}
+  # при таком определении ключ становится символом (symbol)
+  options = { key: 'value' }
+  options[:key] # 'value'
+
+  # при таком определении ключ становится строкой (symbol)
+  options = { 'key' => 'value' }
+
+  # добавление/замена в хешах
+  options[:where] = 'code-basics'
+  options[:who] = 'hexlet'
+
+  # возвращает ключи
+  options.keys # [:key, :where, :who]
+
+  # возвращает значения
+  options.values # ['value', 'code-basics', 'hexlet']
+
+  # Обращение к несуществующему элементу возвращает nil
+  options[:language] # nil
+
+  # Доступ к вложенным структурам без необходимости проверок
+  options.dig(:key1, :key2, :key3)
+
+  # Если ключа нет, то будет брошено исключение
+  options.fetch(:key)
+
+  # Если ключа нет, то вернется значение по умолчанию
+  options.fetch(:key, 'default value')
+  ```
+
+  # Проверка наличия ключа
+  options.key?('who') # true
+
+  Хеши в Ruby передаются по ссылке, но сравнение происходит по значению как и в массивах.
+
+  ```ruby
+  options1 = { language: 'ruby' }
+  options2 = { language: 'ruby' }
+  options1 == options2 # true
+  ```
+
+  У хешей как и у массивов огромное количество различных методов на все случаи жизни включая обход и разнообразные функции высшего порядка. Частично мы их коснемся дальше, но основная часть познается уже в повседневной работе.
+
+instructions: |
+
+  Реализуйте функцию `get_words_count_by_lang()`, которая считает количество слов в тексте
+
+  ```ruby
+  text = 'php ruby php java javascript go go go'
+  get_words_count_by_lang text
+  # {
+  #   php: 2,
+  #   ruby: 1,
+  #   java: 1,
+  #   javascript: 1,
+  #   go: 3
+  # }
+  ```
+
+tips:
+  - |
+    [each_with_index()](https://ruby-doc.org/core-3.0.0/Enumerator.html#method-i-each_with_index)
