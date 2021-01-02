@@ -6,6 +6,7 @@ RUN apt-get install -y ruby-full bundler
 WORKDIR /exercises-ruby
 
 COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
 
 RUN bundle install
 
