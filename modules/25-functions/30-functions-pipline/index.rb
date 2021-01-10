@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 # BEGIN
-const getMenCountByYear = (users) => {
-  const men = users.filter(({ gender }) => gender === 'male');
+def get_men_count_by_year(users)
+  men = users.filter { |u| u[:gender] == 'male' }
+  years = men.map { |u| u[:birthday][0, 4] }
 
-  const years = men.map(({ birthday }) => birthday.slice(0, 4));
-
-  return years.reduce((acc, year) => {
-    const count = _.get(acc, year, 0) + 1;
-    return { ...acc, [year]: count };
-  }, {});
-};
+  years.reduce({}) do |acc, year|
+    acc[year] ||= 0
+    acc[year] += 1
+    acc
+  end
+end
 # END
