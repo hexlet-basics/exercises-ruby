@@ -17,6 +17,9 @@ theory: |
   options[:where] = 'code-basics'
   options[:who] = 'hexlet'
 
+  options.any? # true
+  options.empty? # false
+
   # возвращает ключи
   options.keys # [:key, :where, :who]
 
