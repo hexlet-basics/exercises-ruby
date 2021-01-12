@@ -5,6 +5,7 @@ require_relative './index'
 
 describe 'function' do
   it 'should works' do
-    # assert { double(3) == 6 }
+    strings = ['wow?', 'One?', 'tWo!', 'THREE']
+    assert { convert(strings) == ['one?', 'wow?'] }
   end
 end
