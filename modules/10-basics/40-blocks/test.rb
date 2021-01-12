@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require './index'
+require_relative './index'
 
 describe 'function' do
   it 'should works 1' do

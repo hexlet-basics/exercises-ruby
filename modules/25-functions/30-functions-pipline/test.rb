@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require './index'
+require_relative './index'
 
 describe 'function' do
   it 'should works' do
@@ -23,7 +23,7 @@ describe 'function' do
       '1963' => 1,
       '1980' => 2,
       '2012' => 1,
-      '1999' => 1,
+      '1999' => 1
     }
 
     assert { get_men_count_by_year(users) == expected }
