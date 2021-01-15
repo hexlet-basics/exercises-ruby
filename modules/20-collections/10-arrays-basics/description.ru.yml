@@ -62,4 +62,6 @@ instructions: |
 
 tips:
   - |
-    [each_with_index()](https://ruby-doc.org/core-3.0.0/Enumerator.html#method-i-each_with_index)
+    [Способы определения массивов]()
+  - |
+    [Методы массивов](https://ruby-doc.org/core-3.0.0/Enumerator.html)

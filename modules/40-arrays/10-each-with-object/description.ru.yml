@@ -7,8 +7,8 @@ theory: |
 
   ```ruby
   sentence = 'hexlet – work harder'
-  words = sentence.split ' '
-  words.reduce({}) do |acc, word|
+  words = sentence.split
+  result = words.reduce({}) do |acc, word|
     acc[word] |= 0
     acc[word] += 1
     acc # <= возврат
@@ -20,7 +20,7 @@ theory: |
   ```ruby
   sentence = 'hexlet – work harder'
   words = sentence.split ' '
-  words.each_with_object({}) do |word, acc|
+  result = words.each_with_object({}) do |word, acc|
     acc[word] |= 0
     acc[word] += 1
   end
@@ -30,6 +30,18 @@ theory: |
 
 instructions: |
 
-  В процессе разработки
+  Реализуйте функцию `words_by_letters()`, которая разбирает текст и группирует слова по буквам:
+
+  ```ruby
+  sentence = 'hexlet helps people to become developers'
+  result = words_by_letters(sentence)
+  # {
+  #   b: ['become'],
+  #   d: ['developers'],
+  #   t: ['to'],
+  #   h: ['hexlet', 'helps'],
+  #   p: ['people']
+  # }
+  ```
 
 tips: []

@@ -7,6 +7,8 @@ theory: |
   ```ruby
   # Конкатенация
   name = 'H' + 'e' + 'x' + 'l' + 'e' + 't' # Hexlet
+  # Можно даже так
+  name = 'H' 'e' 'x' 'l' 'e' 't' # Hexlet
   # Интерполяция
   greeting = "hello #{name}" # hello Hexlet
   ```
@@ -63,4 +65,6 @@ instructions: |
 
 tips:
   - |
-    [Документация по строкам](https://ruby-doc.org/core-2.7.2/String.html)
+    [Способы определения строк](https://ruby-doc.org/core-3.0.0/doc/syntax/literals_rdoc.html#label-Strings)
+  - |
+    [Методы строк](https://ruby-doc.org/core-3.0.0/String.html)
