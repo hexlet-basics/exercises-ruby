@@ -16,7 +16,7 @@ theory: |
   Интерполяция выполняется только в строках с двойными кавычками. Строки, состоящие из одиночных кавычек, воспринимаются «как есть» — по аналогии с PHP.
 
   ```ruby
-  line_feed = "one line\nanotherone"
+  line_feed = "one line\nanother one"
   # one line
   # another one
   ```
