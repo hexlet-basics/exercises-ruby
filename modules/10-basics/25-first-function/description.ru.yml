@@ -14,7 +14,7 @@ theory: |
     sum.to_f / 2
   end
 
-  find_average(3, 1) # 4.0
+  find_average(3, 1) # 2.0
   find_average(1, 2) # 1.5
 
   # Можно вызывать и так
