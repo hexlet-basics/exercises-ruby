@@ -9,7 +9,7 @@ theory: |
   sentence = 'hexlet – work harder'
   words = sentence.split
   result = words.reduce({}) do |acc, word|
-    acc[word] |= 0
+    acc[word] ||= 0
     acc[word] += 1
     acc # <= возврат
   end
