@@ -9,7 +9,7 @@ theory: |
 
   ```ruby
   true && false # false
-  fales || true # true
+  false || true # true
   ```
 
   В отличии от многих других языков, сравнение с логическим значением в Ruby строгое, то есть `true` и `false` равны только самим себе:
