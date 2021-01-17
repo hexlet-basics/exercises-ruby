@@ -10,32 +10,41 @@ theory: |
   name, description, topics = data
   puts name # "hexlet"
   puts description # "online courses"
-  puts topics # ["php", "js"]
+  puts topics # { topics: ["php", "js"] }
 
   # Обычный способ
   # name = data[0] либо data.first
   # description = data[1]
-  # topis = data[2] либо data.last
+  # topics = data[2] либо data.last
   ```
 
-  Имена переменных `name` и `description` могут быть любыми, на деструктуризацию это не влияет. Деструктуризация может быть сколь угодно вложенной:
+  Имена переменных `name` и `description` могут быть любыми, на деструктуризацию это не влияет. Стоит запомнить, что для деструктуризации вложенных массивов нам нужно знать либо количество элементов в массиве, либо пропустить их, чтобы не получить исключение. Пример:
 
   ```ruby
-  # _ – используется когда значение не важно
-  [_, _, [first_topic]] = data
+  data = ['hexlet', 'online courses', ['php', 'js']]
+  # для доступа ко вложенному массиву используются круглые скобки
+  name, description, (first_topic, second_topic) = data # учли количество элементов
+
+  # _ – используется, когда значение не важно
+  _, _, (first_topic, _) = data # так же все элементы учтены
+
   # * – указывает что нам не важны все значения
-  [*, [_, second_topic]] = data
+  *, (_, second_topic) = data # пропустили элементы в первом массиве, во вложенном количество учтено
+
+  # данный пример вызовет исключение: не учли количество элементов
+  name, description, (first_topic) = data # Error
   ```
 
   Часто деструктуризацию используют для отделения первого (или первых) элемента от остальных. Для этого используется *splat-оператор* – \*.
 
   ```ruby
+  data = ['hexlet', 'online courses', ['php', 'js']]
   name, *rest = data
-  puts rest # ["online courses", "programming"]
+  puts rest # ["online courses", ["php", "js"]]
 
   # В любом месте
   name, *rest, topic = data
-  puts rest # ["programming"]
+  puts rest # ["online courses"]
   ```
 
   Деструктуризация, к сожалению, не работает для хешей. Однако, можно немного схитрить и получить похожую функциональность:
