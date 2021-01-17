@@ -23,7 +23,7 @@ theory: |
   items.empty? # false
 
   # входит ли value в items
-  items.include?(value)
+  items.include? value
 
   # Обращение к несуществующему элементу возвращает nil
   items[5] # nil
