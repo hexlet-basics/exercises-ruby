@@ -45,7 +45,7 @@ instructions: |
 
   ```ruby
   strings = ['wow?', 'One?', 'tWo!', 'THREE']
-  convert(strings) # []
+  convert(strings) # ["one?", "wow?"]
   ```
 
 tips: []
