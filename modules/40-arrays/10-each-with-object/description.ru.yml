@@ -21,7 +21,7 @@ theory: |
   sentence = 'hexlet – work harder'
   words = sentence.split ' '
   result = words.each_with_object({}) do |word, acc|
-    acc[word] |= 0
+    acc[word] ||= 0
     acc[word] += 1
   end
   ```
