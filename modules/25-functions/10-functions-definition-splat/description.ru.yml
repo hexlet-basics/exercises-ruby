@@ -27,15 +27,15 @@ theory: |
   sum(1) # 1
   ```
 
-  Splat-оператор может встречаться в определении функции только один раз — и только в самом конце:
+  Splat-оператор может встречаться в определении функции только один раз:
 
   ```ruby
   # Так не сработает
-  sum(*numbers1, *numbers2)
-  sum(*numbers, numbers)
+  def sum(*numbers1, *numbers2)
 
   # А так сработает
-  sum(number1, number2, *numbers)
+  def sum(*number1, number2)
+  def sum(number1, number2, *numbers)
   ```
 
 instructions: |
