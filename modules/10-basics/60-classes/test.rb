@@ -7,7 +7,8 @@ require_relative './index'
 describe 'function' do
   it 'should works' do
     today = Date.today
-    t = Time.new today.year, today.month, today.day + 1
+    tomorrow = today.next
+    t = Time.new tomorrow.year, tomorrow.month, tomorrow.day
     puts t
     assert { next_day == t }
   end
