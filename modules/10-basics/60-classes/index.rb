@@ -3,6 +3,7 @@
 # BEGIN
 def next_day
   today = Date.today
-  Time.new today.year, today.month, today.day + 1
+  tomorrow = today.next
+  Time.new tomorrow.year, tomorrow.month, tomorrow.day
 end
 # END
