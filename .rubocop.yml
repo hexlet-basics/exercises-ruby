@@ -13,3 +13,12 @@ Style/Documentation:
 
 Naming/MethodParameterName:
   Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Style/EachWithObject:
+  Enabled: false

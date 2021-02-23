@@ -3,7 +3,7 @@
 require 'test_helper'
 require_relative './index'
 
-describe 'function' do
-  it 'should works' do
-  end
-end
+# describe 'function' do
+#   it 'should works' do
+#   end
+# end

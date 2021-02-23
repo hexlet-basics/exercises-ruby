@@ -6,7 +6,7 @@ def sort_cases(data)
     # destructuring example
     day, month, year = row.first.split('-')
     Time.new(year, month, day).to_i
-  # it is possible to chain blocks
+    # it is possible to chain blocks
   end.reverse
 end
 # END

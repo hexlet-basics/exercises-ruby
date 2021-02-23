@@ -1,5 +1,6 @@
-# BEGIN
+# frozen_string_literal: true
 
+# BEGIN
 # Ruby Way
 # [Hash, Array, Range].include?(value.class) ? :complex : :simple
 
@@ -10,5 +11,4 @@ def type_of_type(value)
     :simple
   end
 end
-
 # END

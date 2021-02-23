@@ -6,17 +6,17 @@ require_relative './index'
 describe 'function' do
   it 'should works' do
     data = [
-      ['ruby', 'dynamic', 'strong'],
-      ['js', 'dynamic', 'weak'],
-      ['c', 'static', 'weak'],
-      ['kotlin', 'static', 'strong']
+      %w[ruby dynamic strong],
+      %w[js dynamic weak],
+      %w[c static weak],
+      %w[kotlin static strong]
     ]
 
     expected = [
-      ['ruby', 'strong'],
-      ['js', 'weak'],
-      ['c', 'weak'],
-      ['kotlin', 'strong']
+      %w[ruby strong],
+      %w[js weak],
+      %w[c weak],
+      %w[kotlin strong]
     ]
 
     assert { convert(data) == expected }
