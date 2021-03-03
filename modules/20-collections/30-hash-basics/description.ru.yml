@@ -71,4 +71,4 @@ instructions: |
 
 tips:
   - |
-    [each\_with\_index()](https://ruby-doc.org/core-3.0.0/Enumerator.html#method-i-each_with_index)
+    [each()](https://ruby-doc.org/core-3.0.0/Enumerator.html#method-i-each)
