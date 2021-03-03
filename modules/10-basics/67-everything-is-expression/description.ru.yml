@@ -40,6 +40,7 @@ instructions: |
 
   * `upcase()` – перевод строки в верхний регистр
   * `downcase()` – перевод строки в нижний регистр
+  * [each_char()](https://ruby-doc.org/core-2.7.2/String.html#method-i-each_char) – обход строки побуквенно
 
 # definitions:
 #   Объекты первого рода
