@@ -3,10 +3,8 @@
 # BEGIN
 def intersection(coll1, coll2)
   result = []
-  coll1.each do |item1|
-    coll2.each do |item2|
-      result << item1 if item1 == item2
-    end
+  coll1.each do |item|
+    result << item if coll2.include? item
   end
   result
 end
