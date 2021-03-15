@@ -14,12 +14,12 @@ theory: |
   company_name.each_char do |c| # c – значит char
     puts c
   end
-  # h
-  # e
-  # x
-  # l
-  # e
-  # t
+  # => h
+  # => e
+  # => x
+  # => l
+  # => e
+  # => t
   ```
 
   Метод [each_char()](https://ruby-doc.org/core-2.7.2/String.html#method-i-each_char) определен именно на строке.
@@ -29,7 +29,7 @@ theory: |
   ```ruby
   company_name = 'hexlet'
   letters_count = 0
-  company_name.each_char do |c| # c – значит char
+  company_name.each_char do |c|
     if c == 'e'
       letters_count += 1
     end
