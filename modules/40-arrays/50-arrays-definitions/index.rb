@@ -2,10 +2,7 @@
 
 # BEGIN
 def valid_date?(date)
-  days = (1..31)
-  months = (1..12)
-  day, month = date.split('-')
-
-  days.include?(day.to_i) && months.include?(month.to_i)
+  day, month = date.split('-').map(&:to_i)
+  day.between?(1, 31) && month.between?(1, 12)
 end
 # END
