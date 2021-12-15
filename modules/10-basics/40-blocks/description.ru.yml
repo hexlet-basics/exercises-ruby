@@ -66,14 +66,17 @@ theory: |
   # Подставьте в них мысленно скобки
 
   # Обе функции печатают на экран приветствие, если им передан блок
-  print_hello_f1 { "Dima" } # => "Hello from f1, Dima"
-  print_hello_f2 { "Vasya" } # => "Hello from f2, Dima"
+  print_hello_f1 { "Dima" }
+  # => "Hello from f1, Dima"
+  print_hello_f2 { "Vasya" }
+  # => "Hello from f2, Dima"
 
   # При таком вызове функции ничего не печатают, так как нет блока
   print_hello_f1
   print_hello_f2
 
-  print_hello_f1 print_hello_f2 { "Dima" } # => ?
+  print_hello_f1 print_hello_f2 { "Dima" }
+  # => ?
 
   print_hello_f1 print_hello_f2 do
     "Vasya"
@@ -94,9 +97,9 @@ theory: |
 
   ```ruby
   # Равнозначные варианты. Скобки определяют, куда будет отнесён блок
+  # f1(f2()) do ... end
   print_hello_f1(print_hello_f2()) { 'Petya' }
   # => "Hello from f1, Petya"
-  # f1(f2()) do ... end
   print_hello_f1 print_hello_f2 do
     'Petya'
   end
