@@ -67,7 +67,7 @@ theory: |
   print_hello_f1 { "Dima" }
   # => "Hello from f1, Dima"
   print_hello_f2 { "Vasya" }
-  # => "Hello from f2, Dima"
+  # => "Hello from f2, Vasya"
 
   # При таком вызове функции ничего не печатают, так как нет блока
   print_hello_f1
