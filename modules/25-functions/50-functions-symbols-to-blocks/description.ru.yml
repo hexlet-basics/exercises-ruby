@@ -16,7 +16,7 @@ theory: |
 
   ```ruby
   block = :capitalize.to_proc
-  # proc = { |value| value.capitalize }
+  # block = proc { |value| value.capitalize }
   block.call('hexlet') # "Hexlet"
   ```
 
