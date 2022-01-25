@@ -22,3 +22,6 @@ Metrics/MethodLength:
 
 Style/EachWithObject:
   Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
