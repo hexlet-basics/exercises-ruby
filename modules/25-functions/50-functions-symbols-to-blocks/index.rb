@@ -2,8 +2,8 @@
 
 # BEGIN
 def convert(strings)
-  strings.sort
-         .filter { |str| str.end_with?('?') }
+  strings.filter { |str| str.end_with?('?') }
          .map(&:downcase)
+         .sort
 end
 # END
