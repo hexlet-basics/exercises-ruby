@@ -3,3 +3,6 @@ language:
   extension: ruby
   exercise_filename: index.rb
   exercise_test_filename: test.rb
+  learn_as: second_language
+  progress: completed
+  name: Ruby
