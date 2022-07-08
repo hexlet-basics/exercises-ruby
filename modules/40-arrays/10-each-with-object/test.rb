@@ -15,5 +15,6 @@ describe 'function' do
       'p' => ['people']
     }
     assert { actual == expected }
+    assert { actual.keys == expected.keys }
   end
 end
