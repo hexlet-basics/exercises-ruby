@@ -38,9 +38,9 @@ instructions: |
   # {
   #   b: ['become'],
   #   d: ['developers'],
-  #   t: ['to'],
   #   h: ['hexlet', 'helps'],
-  #   p: ['people']
+  #   p: ['people'],
+  #   t: ['to']
   # }
   ```
 
