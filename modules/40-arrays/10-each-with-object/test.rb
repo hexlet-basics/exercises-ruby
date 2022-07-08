@@ -10,9 +10,9 @@ describe 'function' do
     expected = {
       'b' => ['become'],
       'd' => ['developers'],
-      't' => ['to'],
       'h' => %w[hexlet helps],
-      'p' => ['people']
+      'p' => ['people'],
+      't' => ['to']
     }
     assert { actual == expected }
   end
