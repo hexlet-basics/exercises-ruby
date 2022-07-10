@@ -2,7 +2,7 @@
 
 # BEGIN
 def words_by_letters(sentence)
-  words = sentence.split
+  words = sentence.split.sort
   words.each_with_object({}) do |word, acc|
     acc[word[0]] ||= []
     acc[word[0]] << word

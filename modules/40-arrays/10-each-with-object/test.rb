@@ -10,10 +10,11 @@ describe 'function' do
     expected = {
       'b' => ['become'],
       'd' => ['developers'],
-      't' => ['to'],
-      'h' => %w[hexlet helps],
-      'p' => ['people']
+      'h' => %w[helps hexlet],
+      'p' => ['people'],
+      't' => ['to']
     }
     assert { actual == expected }
+    assert { actual.keys == expected.keys }
   end
 end
