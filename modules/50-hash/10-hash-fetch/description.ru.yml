@@ -50,13 +50,15 @@ theory: |
     authentication: :cram_md5
   }
   ```
-Кстати если следовать ruby style guide метод fetch является более приоритетным.
+  Кстати если следовать ruby style guide метод fetch является более приоритетным.
 
- **[transform_values()](https://apidock.com/ruby/Hash/fetch)**
+  **[fetch()](https://apidock.com/ruby/Hash/fetch)**
+
 instructions: |
 
   Реализуйте функцию setup_env(), которая принимает: ключ, параметры в виде hash и блок который в свою очередь тоже принимает два параметра - это ключ и hash из параметров функции.
   Если переданного ключа нет в передаваемом хеше, то тогда нужно вызвать блок, передав в него первым аргументом ключ, а вторым хеш:
+
   ```
   env = { api_key: 123 }
   setup_env(:host, env) { |env, key|  env[key] = 'localhost' } # -> { api_key: 123, host: 'lockalhost' }

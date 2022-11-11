@@ -9,11 +9,11 @@ describe 'test setup_env' do
     no_key = setup_env(
       :host,
       env
-      ) { |env, key|  env[key] = 'localhost' }
-    
+    ) { |config, key| config[key] = 'localhost' }
+
     expected = { api_key: 123, host: 'localhost' }
 
     assert { no_key == expected }
-    assert { env ==  { api_key: 123 } }
+    assert { env == { api_key: 123 } }
   end
 end
