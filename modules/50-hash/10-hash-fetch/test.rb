@@ -3,7 +3,17 @@
 require 'test_helper'
 require_relative './index'
 
-# describe 'function' do
-#   it 'should works' do
-#   end
-# end
+describe 'test setup_env' do
+  it 'should works' do
+    env = { api_key: 123 }
+    no_key = setup_env(
+      :host,
+      env
+      ) { |env, key|  env[key] = 'localhost' }
+    
+    expected = { api_key: 123, host: 'localhost' }
+
+    assert { no_key == expected }
+    assert { env ==  { api_key: 123 } }
+  end
+end
