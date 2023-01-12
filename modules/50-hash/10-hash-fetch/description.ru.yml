@@ -2,29 +2,32 @@
 
 name: Метод fetch и извлечение значений из хеша
 theory: |
-  В Ruby значения из hash по ключу извлекает метод `[]` и `fetch`. Посмотрим в чем отличие.
+  В Ruby значения из хеша по ключу извлекает метод `[]` и `fetch`. В чем же принципиальное отличие между ними? 
+
+  Если запрашивать значение по несуществующему ключу, метод `[]` молча возвращает `nil`.
 
   ```ruby
   env = {
-    api_key: 123,
     host: 'localhost',
     port: 3000 
   }
   puts env[:user] # -> nil
-  puts env.fetch(:user) # ->  получим ошибку key not found (KeyError)
   ```
-
-  Если запрашивать значение по несуществующему ключу, метод `[]` молча возвращает `nil`.
-
-  Не забываем в Ruby - все объект и `[]` метод объекта Hash.
   
   Метод `fetch` же действует иначе - если ключа нет, получим ошибку  КеуError
 
-  Метод `fetch` принимает вторым параметром значение по умалчанию:
+  ```ruby
+  env = {
+    host: 'localhost',
+    port: 3000 
+  }
+  puts env.fetch(:user) # ->  получим ошибку key not found (KeyError)
+  ```
+
+  Метод `fetch` принимает вторым параметром значение по умолчанию, которое будет возвращено если ключ не был найден:
 
   ```ruby
   env = {
-    api_key: 123,
     host: 'localhost',
     port: 3000 
   }
@@ -32,7 +35,7 @@ theory: |
   puts env.fetch(:user, 'guest') # ->  'guest'
   ```
 
-  И даже блок или `lambda`:
+  И даже блок или лямбда-функцию:
 
   ```ruby
   env = { host: 'localhost' }
@@ -54,9 +57,7 @@ theory: |
     authentication: :cram_md5
   }
   ```
-  Кстати если следовать ruby style guide метод `fetch` приоритетние чем [].
-
-  **[fetch()](https://apidock.com/ruby/Hash/fetch)**
+  Ruby style guide советует использовать метод `fetch` вместо метода `[]`.
 
 instructions: |
   Реализуйте функцию `setup_env()`.
@@ -65,9 +66,7 @@ instructions: |
 
   Если переданного ключа нет в hash, вызываем блок, передав в него первым аргументом ключ, а вторым hash, иначе вернуть исходный hash.
 
-  Сдесь понадобится метод `yield`.
-
-  **[yield](https://apidock.com/ruby/Proc/yield)**
+  Здесь понадобится метод `yield`.
 
   ```ruby
   env = { api_key: 123 }
@@ -78,5 +77,8 @@ instructions: |
 
   Функция не изменяет исходный объект.
 
-
-tips: []
+tips:
+  - |
+    [yield](https://apidock.com/ruby/Proc/yield)
+  - |
+    [fetch()](https://apidock.com/ruby/Hash/fetch)
