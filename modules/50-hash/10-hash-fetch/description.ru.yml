@@ -2,45 +2,52 @@
 
 name: Метод fetch и извлечение значений из хеша
 theory: |
+  В Ruby значения из хеша по ключу извлекает метод `[]` и `fetch`. В чем же принципиальное отличие между ними? 
 
-  В Ruby помимо стандартного способа извлечения значения из хеша существует метод fetch. В чем же принципиальное отличие?
+  Если запрашивать значение по несуществующему ключу, метод `[]` молча возвращает `nil`.
 
   ```ruby
   env = {
-    api_key: 123,
     host: 'localhost',
     port: 3000 
-    }
+  }
   puts env[:user] # -> nil
+  ```
+  
+  Метод `fetch` же действует иначе - если ключа нет, получим ошибку  КеуError
+
+  ```ruby
+  env = {
+    host: 'localhost',
+    port: 3000 
+  }
   puts env.fetch(:user) # ->  получим ошибку key not found (KeyError)
   ```
-  То есть если мы запрашиваем значение по несуществующему ключу через метод [] (не забываем в Ruby - все есть объект и соответственно [] обычный метод объекта Hash), он молча возвращает nil.
-  Метод fetch же действует иначе - если ключа не существует, мы получим ошибку  КеуError
 
-  Метод fetch принемает вторым параметром значение по умалчанию:
+  Метод `fetch` принимает вторым параметром значение по умолчанию, которое будет возвращено если ключ не был найден:
 
   ```ruby
   env = {
-    api_key: 123,
     host: 'localhost',
     port: 3000 
-    }
+  }
   puts env.fetch(:user, nil) # -> nil
   puts env.fetch(:user, 'guest') # ->  'guest'
   ```
 
-  И даже блок или lambda:
+  И даже блок или лямбда-функцию:
 
-  ```
+  ```ruby
   env = { host: 'localhost' }
 
   env.fetch(:user) {  |key| env[key] = 'guest' }
   puts env # -> { host: 'localhost', user: 'guest' }
 
   ```
+
   А вот конфигурация почтовой рассылки из приложения на Ruby on Rails:
 
-  ```
+  ```ruby
   config.action_mailer.smtp_settings = {
     user_name: ENV.fetch('MAIL_USERNAME', nil),
     password: ENV.fetch('MAIL_PASSWORD', nil),
@@ -50,23 +57,30 @@ theory: |
     authentication: :cram_md5
   }
   ```
-  Кстати если следовать ruby style guide метод fetch является более приоритетным.
-
-  **[fetch()](https://apidock.com/ruby/Hash/fetch)**
+  Ruby style guide советует использовать метод `fetch` вместо метода `[]`.
 
 instructions: |
+  Реализуйте функцию `setup_env()`.
+  
+  Функция принимает: ключ, объект - hash и блок который в свою очередь тоже принимает два параметра - ключ и hash из параметров функции.
 
-  Реализуйте функцию setup_env(), которая принимает: ключ, параметры в виде hash и блок который в свою очередь тоже принимает два параметра - это ключ и hash из параметров функции.
-  Если переданного ключа нет в передаваемом хеше, то тогда нужно вызвать блок, передав в него первым аргументом хеш, а вторым ключ:
+  Если переданного ключа нет в hash, вызываем блок, передав в него первым аргументом ключ, а вторым hash, иначе вернуть исходный hash.
 
-  ```
+  Здесь понадобится метод `yield`.
+
+  ```ruby
   env = { api_key: 123 }
   setup_env(:host, env) { |env, key|  env[key] = 'localhost' } # -> { api_key: 123, host: 'lockalhost' }
   setup_env(:key, env) { |env, key|  env[key] = 'localhost' } # -> { api_key: 123, key: 'lockalhost' }
   env == { api_key: 123 } # -> true
   ```
+  
   Функция должна вернуть обработанный хеш из параметров.
   Функция не должна мутировать исходный объект.
 
 
-tips: []
+tips:
+  - |
+    [yield](https://apidock.com/ruby/Proc/yield)
+  - |
+    [fetch()](https://apidock.com/ruby/Hash/fetch)
