@@ -61,8 +61,8 @@ instructions: |
 
   ```
   env = { api_key: 123 }
-  setup_env(:host, env) { |env, key|  env[key] = 'localhost' } # -> { api_key: 123, host: 'lockalhost' }
-  setup_env(:key, env) { |env, key|  env[key] = 'localhost' } # -> { api_key: 123, key: 'lockalhost' }
+  setup_env(:host, env) { |env, key|  env[key] = 'localhost' } # -> { api_key: 123, host: 'localhost' }
+  setup_env(:key, env) { |env, key|  env[key] = 'localhost' } # -> { api_key: 123, key: 'localhost' }
   env == { api_key: 123 } # -> true
   ```
   Функция должна вернуть обработанный хеш из параметров.
