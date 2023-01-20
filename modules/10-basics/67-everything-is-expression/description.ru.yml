@@ -32,8 +32,8 @@ instructions: |
   Реализуйте функцию `invert_case()`, которая меняет в строке регистр каждой буквы на противоположный.
 
   ```ruby
-  invert_case('Hello, World!'); // hELLO, wORLD!
-  invert_case('I loVe JS');     // i LOvE js
+  invert_case('Hello, World!'); # hELLO, wORLD!
+  invert_case('I loVe JS');     # i LOvE js
   ```
 
   Полезные методы:
