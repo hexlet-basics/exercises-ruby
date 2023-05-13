@@ -29,7 +29,7 @@ theory: |
   Такое поведение не распространяется на метод `fetch()`:
 
   ```ruby
-  env = Hash.new('loaclhost')
+  env = Hash.new('localhost')
   puts(env.fetch(:host)) # -> key not found: :host (KeyError)
   ```
   Как вы видите, так же будет ошибка: KeyError.
@@ -37,22 +37,22 @@ theory: |
   Где же хранится значение по умолчанию? Это можно посмотреть вызвать метод `inspect()` видно, что значение не является частью хеша, а является частью экземпляра класса Hash:
 
   ```ruby
-  env = Hash.new('loaclhost')
+  env = Hash.new('localhost')
   puts(env.inspect) # -> {}
   ```
 
   `Hash.new` может принимать блок кода, который также позволяет задавать ключам значение по умолчанию. Таким образом нам не надо проверять существует ключ или нет:
 
   ```ruby
-  dependensis = Hash.new { |h, key| h[key] = [] }
-  dependensis[:simple_form] << 'simple_form_bootstrap'
-  puts(dependensis[:simple_form]) # -> ['simple_form_bootstrap']
+  dependencies = Hash.new { |h, key| h[key] = [] }
+  dependencies[:simple_form] << 'simple_form_bootstrap'
+  puts(dependencies[:simple_form]) # -> ['simple_form_bootstrap']
   ```
   Так же значение по умолчанию можно задавать через метод `default()`:
 
   ```ruby
   env = Hash.new('localhost')
-  puts(env[:host]) # -> localhos
+  puts(env[:host]) # -> localhost
   env.default = 'example.com'
   puts(env[:host]) # -> example.com
   ```
