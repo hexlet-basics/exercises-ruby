@@ -1,0 +1,4 @@
+name: Хеши
+tips:
+  - |
+    [each()](https://ruby-doc.org/core-3.0.0/Enumerator.html#method-i-each)

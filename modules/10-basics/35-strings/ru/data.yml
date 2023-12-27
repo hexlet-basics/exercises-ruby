@@ -1,0 +1,7 @@
+name: Строки
+tips:
+  - >
+    [Способы определения
+    строк](https://ruby-doc.org/core-3.0.0/doc/syntax/literals_rdoc.html#label-Strings)
+  - |
+    [Методы строк](https://ruby-doc.org/core-3.0.0/String.html)

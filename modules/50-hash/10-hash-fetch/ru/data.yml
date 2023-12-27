@@ -1,0 +1,6 @@
+name: Метод fetch и извлечение значений из хеша
+tips:
+  - |
+    [yield](https://apidock.com/ruby/Proc/yield)
+  - |
+    [fetch()](https://apidock.com/ruby/Hash/fetch)
