@@ -1,0 +1,4 @@
+name: Hash.new. Задание значений по умолчанию.
+tips:
+  - |
+    [Hash.new](https://ruby-doc.org/core-2.5.1/Hash.html)
