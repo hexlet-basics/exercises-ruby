@@ -1,7 +1,6 @@
 FROM hexletbasics/base-image:latest
 
-RUN apt-get update
-RUN apt-get install -y ruby-full bundler
+RUN apt-get update && apt-get install -y ruby-full bundler
 
 WORKDIR /exercises-ruby
 

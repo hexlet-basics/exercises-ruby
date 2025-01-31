@@ -4,7 +4,10 @@ AllCops:
   Include:
     - 'lib/**/*.rb'
     - 'modules/**/*.rb'
-  TargetRubyVersion: 2.7.1
+  TargetRubyVersion: 3.3.0
+
+require:
+  - rubocop-minitest
 
 Style/FrozenStringLiteralComment:
   Enabled: false

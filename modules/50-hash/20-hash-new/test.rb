@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require_relative './index'
+require_relative 'index'
 
 describe 'get_adjacency_matrix' do
   it 'should works' do

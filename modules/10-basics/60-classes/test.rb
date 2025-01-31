@@ -2,7 +2,7 @@
 
 require 'test_helper'
 require 'date'
-require_relative './index'
+require_relative 'index'
 
 describe 'function' do
   it 'should works' do

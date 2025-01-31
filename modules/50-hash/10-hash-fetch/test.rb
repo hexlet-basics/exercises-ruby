@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require_relative './index'
+require_relative 'index'
 
 describe 'test setup_env' do
   it 'should works' do
