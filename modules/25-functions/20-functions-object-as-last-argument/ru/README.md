@@ -3,8 +3,8 @@
 
 ```ruby
 # link_to(body, url, html_options = {})
-link_to 'blog', 'https://ru.hexlet.io/blog', { id: 'news', class: 'article' }
-# <a href="https://ru.hexlet.io/blog" class="article" id="news">blog</a>
+link_to 'blog', 'https://ru.hexlet.io/blog?utm_source=code-basics&utm_medium=referral&utm_campaign=blog&utm_content=main-blog-page', { id: 'news', class: 'article' }
+# <a href="https://ru.hexlet.io/blog?utm_source=code-basics&utm_medium=referral&utm_campaign=blog&utm_content=main" class="article" id="news">blog</a>
 ```
 
 В Ruby добавлен «синтаксический сахар», позволяющий опускать скобки в подобных ситуациях. Вызов выше в реальном коде выглядит так:
