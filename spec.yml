@@ -1,5 +1,5 @@
 language:
-  docker_image: "hexletbasics/exercises-ruby"
+  docker_image: "ghcr.io/hexlet-basics/exercises-ruby"
   extension: ruby
   exercise_filename: index.rb
   exercise_test_filename: test.rb

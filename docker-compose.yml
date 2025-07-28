@@ -3,5 +3,4 @@
 services:
   exercises:
     build: .
-    image: hexletbasics/exercises-ruby:cached
     command: make check
