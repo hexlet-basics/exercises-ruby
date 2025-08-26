@@ -8,8 +8,8 @@ describe 'output' do
       require_relative 'index'
     end
 
-    print out
+    result = out.strip
 
-    assert { out == "Hello, World!" }
+    assert { result == "Hello, World!" }
   end
 end
