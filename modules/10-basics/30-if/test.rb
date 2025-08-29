@@ -3,10 +3,12 @@
 require 'test_helper'
 require_relative 'index'
 
-describe 'function' do
-  it 'should works' do
-    assert { compare(1, 1).zero? }
-    assert { compare(0, 100) == -1 }
-    assert { compare(234, 2) == 1 }
+describe 'check_number' do
+  it 'should work' do
+    assert { check_number(3) == 'positive' }
+    assert { check_number(10) == 'positive' }
+    assert { check_number(-1) == 'negative' }
+    assert { check_number(-5) == 'negative' }
+    assert { check_number(0) == 'zero' }
   end
 end
