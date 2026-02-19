@@ -1,3 +1,1 @@
-# BEGIN
-puts 'hexlet'.methods.grep(/\?/)
-# END
+puts 'hexlet'.methods.shuffle.first(5)

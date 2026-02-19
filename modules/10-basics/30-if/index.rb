@@ -1,13 +1,9 @@
-# frozen_string_literal: true
-
-# BEGIN
-def compare(a, b)
-  if a > b
-    1
-  elsif b > a
-    -1
+def check_number(num)
+  if num > 0
+    "positive"
+  elsif num < 0
+    "negative"
   else
-    0
+    "zero"
   end
 end
-# END
