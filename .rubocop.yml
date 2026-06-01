@@ -4,9 +4,9 @@ AllCops:
   Include:
     - 'lib/**/*.rb'
     - 'modules/**/*.rb'
-  TargetRubyVersion: 3.3.0
+  TargetRubyVersion: 4.0
 
-require:
+plugins:
   - rubocop-minitest
 
 Style/FrozenStringLiteralComment:
@@ -24,6 +24,9 @@ Metrics/MethodLength:
   Enabled: false
 
 Style/EachWithObject:
+  Enabled: false
+
+Style/ReduceToHash:
   Enabled: false
 
 Style/AsciiComments:
