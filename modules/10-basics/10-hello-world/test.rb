@@ -4,7 +4,6 @@ require 'test_helper'
 
 describe 'output' do
   it 'should works' do
-    _(-> { require_relative 'index' }).must_output(/^Hello, World!$/)
-    puts 'Hello, World!'
+    _(-> { require_relative 'index' }).must_output("Hello, World!\n")
   end
 end
