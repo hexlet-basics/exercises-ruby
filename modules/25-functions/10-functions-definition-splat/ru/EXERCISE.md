@@ -11,4 +11,4 @@ hash = merge_all(hash1, hash2, hash3)
 
 ## Подсказки
 
-* [merge()](https://ruby-doc.org/core-3.0.0/Hash.html#method-i-merge)
+- [merge()](https://ruby-doc.org/core-3.0.0/Hash.html#method-i-merge)

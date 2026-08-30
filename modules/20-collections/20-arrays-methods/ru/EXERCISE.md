@@ -28,5 +28,5 @@ result = sort_cases(data)
 
 ## Подсказки
 
-* Ключом сортировки в данном случае выступает unix timestamp, который можно получить из даты, преобразовав его к объекту типа [Time](https://ruby-doc.org/core-3.0.0/Time.html#class-Time-label-Examples)
-* [reverse()](https://ruby-doc.org/core-3.0.0/Array.html#method-i-reverse) – метод возвращает элементы массива в обратном порядке
+- Ключом сортировки в данном случае выступает unix timestamp, который можно получить из даты, преобразовав его к объекту типа [Time](https://ruby-doc.org/core-3.0.0/Time.html#class-Time-label-Examples)
+- [reverse()](https://ruby-doc.org/core-3.0.0/Array.html#method-i-reverse) – метод возвращает элементы массива в обратном порядке

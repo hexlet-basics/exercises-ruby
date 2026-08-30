@@ -32,7 +32,7 @@ end
 
 Вот некоторые примеры подобных функций:
 
-* [max_by()](https://ruby-doc.org/core-3.0.0/Enumerable.html#method-i-max_by) – поиск максимального по указанному параметру в массиве
-* [partition()](https://ruby-doc.org/core-3.0.0/Enumerable.html#method-i-partition) – разделяет массив на два по указанному условию
+- [max_by()](https://ruby-doc.org/core-3.0.0/Enumerable.html#method-i-max_by) – поиск максимального по указанному параметру в массиве
+- [partition()](https://ruby-doc.org/core-3.0.0/Enumerable.html#method-i-partition) – разделяет массив на два по указанному условию
 
 Таких функций у массивов десятки. Единственный способ их запомнить – постоянно практиковаться и читать документацию.

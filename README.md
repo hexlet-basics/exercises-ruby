@@ -1,10 +1,10 @@
 # exercises-ruby
 
-[![Github Actions Status](../../workflows/Docker/badge.svg)](../../actions)
+[![Github Actions Status](https://github.com/hexlet-basics/exercises-ruby/actions/workflows/Docker.yml/badge.svg)](https://github.com/hexlet-basics/exercises-ruby/actions)
 
 ## How to contribute
 
-* Discussions at #hexlet-volunteers [Telegram community](https://t.me/hexletcommunity/12)
+- Discussions at #hexlet-volunteers [Telegram community](https://t.me/hexletcommunity/12)
 
 ## Develop
 

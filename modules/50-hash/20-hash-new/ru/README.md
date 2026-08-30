@@ -13,6 +13,7 @@ env = { host: 'example.com' }
 env = Hash.new # создали пустой хеш
 puts(env[:host]) # -> nil
 ```
+
 Такой способ имеет некоторые преимущества, давайте посмотрим какие:
 
 ```ruby
@@ -28,6 +29,7 @@ puts(env[:user]) # -> 'localhost'
 env = Hash.new('localhost')
 puts(env.fetch(:host)) # -> key not found: :host (KeyError)
 ```
+
 Как вы видите, так же будет ошибка: KeyError.
 
 Где же хранится значение по умолчанию? Это можно посмотреть вызвать метод `inspect()` видно, что значение не является частью хеша, а является частью экземпляра класса Hash:
@@ -44,6 +46,7 @@ dependencies = Hash.new { |h, key| h[key] = [] }
 dependencies[:simple_form] << 'simple_form_bootstrap'
 puts(dependencies[:simple_form]) # -> ['simple_form_bootstrap']
 ```
+
 Так же значение по умолчанию можно задавать через метод `default()`:
 
 ```ruby
@@ -52,4 +55,5 @@ puts(env[:host]) # -> localhost
 env.default = 'example.com'
 puts(env[:host]) # -> example.com
 ```
+
 В этом уроке мы научились создавать хеш альтернативным способом через `Hash.new`. Это бывает полезно когда нам надо инициализировать ключи значением по умолчанию.
